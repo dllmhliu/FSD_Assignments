@@ -1,1 +1,0 @@
-java -jar target/user-1.0-SNAPSHOT.jar

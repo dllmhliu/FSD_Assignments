@@ -1,1 +1,0 @@
-java -jar target/technology-1.0-SNAPSHOT.jar

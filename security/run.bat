@@ -1,1 +1,0 @@
-java -jar target/security-1.0-SNAPSHOT.jar
