@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sba-eureka
+  namespace: sba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sba-eureka
+  template:
+    metadata:
+      labels:
+        app: sba-eureka
+    spec:
+      containers:
+        - name: sba-eureka
+          image: dllmhliu/eureka:latest
+          ports:
+            - name: http-port
+              containerPort: 8761
+      imagePullSecrets:
+        - name: sba
