@@ -18,12 +18,12 @@ pipeline {
         }
         stage('Image Build'){
         	steps{
-        	    bat 'docker build -t wujiabo1985/frontend:latest .'
+        	    bat 'docker build -t dllmhliu/frontend:latest .'
         	}
         }
         stage('Image Push'){
         	steps{
-        	    bat 'docker push wujiabo1985/frontend:latest'
+        	    bat 'docker push dllmhliu/frontend:latest'
         	}
         }
 		stage('Deploy Image') {
@@ -35,7 +35,7 @@ pipeline {
         }
 		stage('Remove Image') {
             steps{
-                bat "docker rmi wujiabo1985/frontend"
+                bat "docker rmi dllmhliu/frontend"
             }
         }
    }

@@ -21,26 +21,26 @@ pipeline {
         }
         stage('Image Push'){
         	steps{
-        	    bat 'docker push wujiabo1985/registry:latest'
-        	    bat 'docker push wujiabo1985/gateway:latest'
-        	    bat 'docker push wujiabo1985/payment:latest'
-        	    bat 'docker push wujiabo1985/search:latest'
-        	    bat 'docker push wujiabo1985/security:latest'
-        	    bat 'docker push wujiabo1985/technology:latest'
-        	    bat 'docker push wujiabo1985/training:latest'
-        	    bat 'docker push wujiabo1985/user:latest'
+        	    bat 'docker push dllmhliu/registry:latest'
+        	    bat 'docker push dllmhliu/gateway:latest'
+        	    bat 'docker push dllmhliu/payment:latest'
+        	    bat 'docker push dllmhliu/search:latest'
+        	    bat 'docker push dllmhliu/security:latest'
+        	    bat 'docker push dllmhliu/technology:latest'
+        	    bat 'docker push dllmhliu/training:latest'
+        	    bat 'docker push dllmhliu/user:latest'
         	}
         }
         stage('Remove Image'){
         	steps{
-        	    bat 'docker rmi wujiabo1985/registry'
-        	    bat 'docker rmi wujiabo1985/gateway'
-        	    bat 'docker rmi wujiabo1985/payment'
-        	    bat 'docker rmi wujiabo1985/search'
-        	    bat 'docker rmi wujiabo1985/security'
-        	    bat 'docker rmi wujiabo1985/technology'
-        	    bat 'docker rmi wujiabo1985/training'
-        	    bat 'docker rmi wujiabo1985/user'
+        	    bat 'docker rmi dllmhliu/registry'
+        	    bat 'docker rmi dllmhliu/gateway'
+        	    bat 'docker rmi dllmhliu/payment'
+        	    bat 'docker rmi dllmhliu/search'
+        	    bat 'docker rmi dllmhliu/security'
+        	    bat 'docker rmi dllmhliu/technology'
+        	    bat 'docker rmi dllmhliu/training'
+        	    bat 'docker rmi dllmhliu/user'
         	    bat 'docker image prune -f'
         	}
         }

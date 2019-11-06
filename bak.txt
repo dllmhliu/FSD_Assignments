@@ -48,7 +48,7 @@ PS C:\Users\JiaBoWu\Downloads\FSD\FSD-SBA\registry> kubectl apply -f deployment.
 deployment.apps/sba-registry created
 
 
-docker push wujiabo1985/registry:latest
+docker push dllmhliu/registry:latest
 
 kubectl apply -f deployment.yaml
 kubectl delete -f deployment.yaml

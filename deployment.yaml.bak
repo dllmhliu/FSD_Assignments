@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sba-registry
-          image: wujiabo1985/registry:latest
+          image: dllmhliu/registry:latest
           ports:
             - name: http-port
               containerPort: 9001

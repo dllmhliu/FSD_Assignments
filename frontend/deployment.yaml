@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sba-frontend
-          image: wujiabo1985/frontend:latest
+          image: dllmhliu/frontend:latest
           ports:
             - name: http-port
               containerPort: 8080
