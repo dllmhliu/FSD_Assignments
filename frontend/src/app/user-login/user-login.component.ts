@@ -50,7 +50,6 @@ export class UserLoginComponent implements OnInit {
 
       this.loading = true;
       this.authenticationService.login(loginFormValue.email, loginFormValue.password)
-          .pipe(first())
           .subscribe(
             data => {
               this.router.navigate([this.returnUrl]);

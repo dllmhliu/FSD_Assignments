@@ -10,7 +10,7 @@ import { Course } from '../models/course';
 })
 export class MentorListComponent implements OnInit {
 
-  courses: Course[];
+  courses: any;
   showCourse: boolean;
   @Input() userRole: string;
   @Input() searchText: string;
@@ -26,11 +26,9 @@ export class MentorListComponent implements OnInit {
     this.showCourse = true;
     this.courseservice.findCourses().subscribe(courses => {
       // tslint:disable-next-line:no-string-literal
-      if (courses['code'] === 200) {
         // tslint:disable-next-line:no-string-literal
-        this.courses = courses['data'];
+        this.courses = courses;
         this.showCourse = false;
-      }
     },
     error => {
           this.alertService.error(error);
