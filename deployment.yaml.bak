@@ -1,23 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sba-eureka
+  name: sba-registry
   namespace: sba
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sba-eureka
+      app: sba-registry
   template:
     metadata:
       labels:
-        app: sba-eureka
+        app: sba-registry
     spec:
       containers:
-        - name: sba-eureka
-          image: dllmhliu/eureka:latest
+        - name: sba-registry
+          image: wujiabo1985/registry:latest
           ports:
             - name: http-port
-              containerPort: 8761
+              containerPort: 9001
+          env:
+            - name: spring_profiles_active
+              value: k8s
       imagePullSecrets:
         - name: sba

@@ -12,29 +12,34 @@ export class CourseService {
   constructor(private http: HttpClient) { }
 
   addCourse(course: NewCourse) {
-    return this.http.post(`${environment.gatewayurl}/course/api/v1/addcourse`, course);
-  }
-
-
-  addRate(rate: NewRate) {
-    return this.http.post(`${environment.gatewayurl}/course/api/v1/addrate`, rate);
+    return this.http.post(`${environment.gatewayurl}/training/api/training/add`, course);
   }
 
   findCourses() {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/list`);
+    return this.http.get(`${environment.gatewayurl}/search/api/search/course/list`);
   }
 
   searchCourses() {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/searchcourse`);
+    return this.http.get(`${environment.gatewayurl}/training/api/training/enable/list`);
   }
-
 
   bookCourses(id: number, username: string, mentorname: string) {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/mentor/book?id=${id}&username=${username}&mentorname=${mentorname}`);
+    return this.http.post(`${environment.gatewayurl}/training/api/training/book/${id}/${username}`,{});
   }
 
-  findUserCourses(progress: number, username: string) {
-    return this.http.get(`${environment.gatewayurl}/course/api/v1/user/list?progress=${progress}&username=${username}`);
+  findUserCourses(tabIndex: number, username: string) {
+    if(tabIndex == 2){
+        return this.http.get(`${environment.gatewayurl}/training/api/training/my/list/user/completed/${username}`);
+    }else{
+        return this.http.get(`${environment.gatewayurl}/training/api/training/my/list/user/going/${username}`);
+    }
   }
 
+  findMentorCourses(tabIndex: number, username: string) {
+    if(tabIndex == 2){
+        return this.http.get(`${environment.gatewayurl}/training/api/training/my/list/mentor/completed/${username}`);
+    }else{
+        return this.http.get(`${environment.gatewayurl}/training/api/training/my/list/mentor/going/${username}`);
+    }
+  }
 }

@@ -15,9 +15,12 @@ spec:
     spec:
       containers:
         - name: sba-frontend
-          image: dllmhliu/frontend:latest
+          image: wujiabo1985/frontend:latest
           ports:
             - name: http-port
               containerPort: 8080
+          env:
+            - name: spring_profiles_active
+              value: k8s
       imagePullSecrets:
         - name: sba
