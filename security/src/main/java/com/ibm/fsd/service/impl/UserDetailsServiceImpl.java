@@ -4,7 +4,6 @@ import com.ibm.fsd.dto.JwtUser;
 import com.ibm.fsd.dto.TUser;
 import com.ibm.fsd.dto.User;
 import com.ibm.fsd.feign.UserFeign;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,8 +19,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        ResponseEntity<TUser> responseEntity = userFeign.findByEmail(username);
-        TUser tUser = responseEntity.getBody();
+        TUser responseEntity = userFeign.findByEmail(username);
+        TUser tUser = responseEntity;
         User user = new User();
         user.setRole(tUser.getRole());
         user.setUsername(tUser.getEmail());

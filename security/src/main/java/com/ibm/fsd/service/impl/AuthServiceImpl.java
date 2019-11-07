@@ -6,7 +6,6 @@ import com.ibm.fsd.exception.TokenIsExpiredException;
 import com.ibm.fsd.feign.UserFeign;
 import com.ibm.fsd.service.AuthService;
 import com.ibm.fsd.utils.JwtTokenUtils;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

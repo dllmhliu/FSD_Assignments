@@ -1,11 +1,10 @@
 package com.ibm.fsd.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ibm.fsd.utils.JwtTokenUtils;
 import com.ibm.fsd.dto.JwtUser;
 import com.ibm.fsd.dto.LoginUser;
 import com.ibm.fsd.dto.User;
-
+import com.ibm.fsd.utils.JwtTokenUtils;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -40,6 +41,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         LoginUser loginUser = null;
         try {
             loginUser = new ObjectMapper().readValue(request.getInputStream(), LoginUser.class);
+            System.out.println("loginUser.getUsername():" + loginUser.getUsername());
         } catch (IOException e) {
             throw new AccessDeniedException("get loginUser from request error");
         }

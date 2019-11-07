@@ -33,7 +33,7 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });
     // get return url from route parameters or default to '/'
@@ -49,7 +49,7 @@ export class UserLoginComponent implements OnInit {
       this.submitted = true;
 
       this.loading = true;
-      this.authenticationService.login(loginFormValue.email, loginFormValue.password)
+      this.authenticationService.login(loginFormValue.username, loginFormValue.password)
           .subscribe(
             data => {
               this.router.navigate([this.returnUrl]);

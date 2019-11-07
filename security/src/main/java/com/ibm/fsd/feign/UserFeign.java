@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface UserFeign {
 
     @RequestMapping(value = "/api/user/findByEmail/{email}", method = RequestMethod.GET)
-    ResponseEntity<TUser> findByEmail(@PathVariable(name = "email", required=true) String email);
+    TUser findByEmail(@PathVariable(name = "email", required=true) String email);
 
     @RequestMapping(value = "/api/user/save", method = RequestMethod.POST)
     ResponseEntity<Void> save(TUser registerUser);

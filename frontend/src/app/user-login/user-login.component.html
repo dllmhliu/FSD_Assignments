@@ -12,7 +12,7 @@
       <div class="login-main-container">
           <h2>Log in Mentor On Demand</h2>
           <mat-form-field>
-              <input matInput placeholder="Enter your email" formControlName="email" id="email" required>
+              <input matInput placeholder="Enter your email" formControlName="username" id="username" required>
               <mat-error *ngIf="hasError('email', 'required')">You must enter a email</mat-error>
               <mat-error *ngIf="hasError('email', 'email')">Not a valid email</mat-error>
           </mat-form-field>

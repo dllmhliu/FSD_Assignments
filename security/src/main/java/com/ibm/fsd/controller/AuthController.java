@@ -1,9 +1,9 @@
 package com.ibm.fsd.controller;
 
 import com.ibm.fsd.dto.TUser;
+import com.ibm.fsd.dto.User;
 import com.ibm.fsd.dto.UserInfoDto;
 import com.ibm.fsd.service.AuthService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

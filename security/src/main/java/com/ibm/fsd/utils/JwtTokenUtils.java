@@ -15,7 +15,7 @@ public class JwtTokenUtils {
     public static final String TOKEN_PREFIX = "Bearer ";
 
     private static final String SECRET = "FSDSBA";
-    private static final String ISS = "WUJIABO";
+    private static final String ISS = "ibm";
 
     // 角色的key
     private static final String ROLE_CLAIMS = "rol";

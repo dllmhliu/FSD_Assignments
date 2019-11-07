@@ -1,7 +1,6 @@
 package com.ibm.fsd.interceptor;
 
 import com.ibm.fsd.constants.SBAConstants;
-
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.context.annotation.Configuration;
