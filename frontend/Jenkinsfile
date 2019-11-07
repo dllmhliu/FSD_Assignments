@@ -6,7 +6,7 @@ pipeline {
     stages {
     	stage('CheckOut Code'){
          	steps{
-            	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/wujiabo/FSD-SBA.git']]])
+            	checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/dllmhliu/FSD_SBA.git']]])
             }
         }
         stage('Angular Build'){
